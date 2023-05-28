@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function SearchHeader({ search }){
 
@@ -7,7 +8,7 @@ function SearchHeader({ search }){
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    
+  
     search(value);
   }
 
@@ -17,6 +18,9 @@ function SearchHeader({ search }){
 
   return (
     <>
+    <div>
+      <Link to="basket">Favoriler</Link>
+    </div>
     <form className='containerClass' onSubmit={handleFormSubmit} >
             <div className="mb-3 mt-3 text-center">
                 <label className="form-label">Aramak istediğiniz Kelimeyi Girin</label>

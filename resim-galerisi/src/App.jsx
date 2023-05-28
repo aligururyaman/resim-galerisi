@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import SearchHeader from './companents/SearchHeader'
 import ImageList from './companents/ImageList'
 import searchImages from './companents/Api'
@@ -15,16 +15,25 @@ function App() {
       setImages(result)
     }
 
+    useEffect (() => 
+      {
+        console.log("resim geldi")
+      },[images]
+    )
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route exect path= "Basket.jsx" element={<Basket/>}></Route>
-          
+          <Route path="/" element={
+            <>
+              <SearchHeader search={handleSubmit} />
+              <ImageList imagesPlaceholder={images} />
+            </>
+          } />
+          <Route path="Basket" element={<Basket />} />
         </Routes>
       </BrowserRouter>
-      <SearchHeader search={handleSubmit} />
-      <ImageList imagesPlaceholder={images}/>
+      
     </>
   )
 }
