@@ -4,12 +4,16 @@ function ImageItem({image}) {
   
         var imageUrl = image.urls.small;
         var altDescription = image.alt_description;
+        var imageId = image.id;
 
         var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
+        
+
         var newFavorite = {
             imageUrl: imageUrl,
-            altDescription: altDescription
+            altDescription: altDescription,
+            imageId: imageId
         };
         favorites.push(newFavorite);
         localStorage.setItem('favorites', JSON.stringify(favorites));

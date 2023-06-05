@@ -15,11 +15,7 @@ function App() {
       setImages(result)
     }
 
-    useEffect (() => 
-      {
-        console.log("resim geldi")
-      },[images]
-    )
+    
   return (
     <>
       <BrowserRouter>
